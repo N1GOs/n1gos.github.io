@@ -1,19 +1,17 @@
-/* style.css */
-
 body, html {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     height: 100%;
-    background: linear-gradient(to bottom, #4b6cb7, #182848); /* Gradient background */
-    color: #fff;
+    background-color: var(--background-light);
+    color: var(--text-light);
     transition: background-color 0.5s, color 0.5s;
     position: relative;
 }
 
 body.dark-mode {
-    background: linear-gradient(to bottom, #1f1f1f, #111111);
-    color: #fff;
+    background-color: var(--background-dark);
+    color: var(--text-dark);
 }
 
 .dark-overlay {
@@ -38,8 +36,7 @@ body.dark-mode {
     --button-text-light: #fff;
     --button-bg-dark: #218838;
     --button-text-dark: #fff;
-    --dropdown-bg: #fff; /* Background color for dropdown menus */
-    --dropdown-text: #000; /* Text color for dropdown menus */
+    --dropdown-bg: #fff; /* Adjust as needed */
 }
 
 #notepad-container {
@@ -102,13 +99,14 @@ body.dark-mode {
 }
 
 #font {
+    display: block;
     opacity: 0;
     transition: opacity 0.5s;
 }
 
 .toolbar-group:hover #font {
     opacity: 1;
-    transition-delay: 0.2s; /* Add a delay for a smoother effect */
+    transition-delay: 0.2s;
 }
 
 #save-btn, #language-switch button {
@@ -150,7 +148,6 @@ body.dark-mode {
 
 .dark-mode #notepad-container {
     background-color: var(--background-dark);
-    color: #fff; /* Set text color to white in dark mode */
 }
 
 .dark-mode #notepad-toolbar {
@@ -158,12 +155,11 @@ body.dark-mode {
 }
 
 .dark-mode #notepad-toolbar label {
-    color: #fff; /* Set label text color to white in dark mode */
+    color: var(--text-light);
 }
 
 .dark-mode #notepad-toolbar input {
     background-color: #fff;
-    color: #000; /* Set input text color to black in dark mode */
 }
 
 .dark-mode #notepad-toolbar button {
