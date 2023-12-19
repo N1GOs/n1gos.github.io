@@ -5,15 +5,15 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: var(--background-light);
-    color: var(--text-light);
+    background: linear-gradient(to bottom, #4b6cb7, #182848); /* Gradient background */
+    color: #fff;
     transition: background-color 0.5s, color 0.5s;
     position: relative;
 }
 
 body.dark-mode {
-    background-color: var(--background-dark);
-    color: #fff; /* Set text color to white in dark mode */
+    background: linear-gradient(to bottom, #1f1f1f, #111111);
+    color: #fff;
 }
 
 .dark-overlay {
@@ -101,6 +101,16 @@ body.dark-mode {
     animation: fadeIn 0.3s ease-in-out;
 }
 
+#font {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.toolbar-group:hover #font {
+    opacity: 1;
+    transition-delay: 0.2s; /* Add a delay for a smoother effect */
+}
+
 #save-btn, #language-switch button {
     background-color: var(--button-bg-light);
     color: var(--button-text-light);
@@ -171,16 +181,5 @@ body.dark-mode {
     }
     to {
         opacity: 1;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
