@@ -1,10 +1,9 @@
-// script.js
-
 let notepadContent = '';
 let currentLanguage = 'en';
 
 function saveNotepad() {
     notepadContent = document.getElementById('notepad').value;
+    // You can save notepadContent to the cloud or perform other actions here
     alert('Content saved:\n\n' + notepadContent);
 }
 
@@ -36,7 +35,10 @@ function updateLanguage() {
 }
 
 function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
+    const body = document.body;
+    body.classList.toggle('dark-mode');
+    const darkModeEnabled = body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', darkModeEnabled);
 }
 
 document.getElementById('size').addEventListener('input', function () {
@@ -52,5 +54,10 @@ document.getElementById('font').addEventListener('change', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+    // Set initial dark mode state
+    const darkModeEnabled = localStorage.getItem('darkMode') === 'true';
+    document.body.classList.toggle('dark-mode', darkModeEnabled);
+
+    // Update language based on user's preference
     updateLanguage();
 });
